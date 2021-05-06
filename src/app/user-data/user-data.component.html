@@ -1,0 +1,23 @@
+<div class="page_wrapper">
+  <div class="main_heading">Enter name to get data</div>
+  <div class="input-with-icon">
+    <input class="input" type="text" placeholder="Search" 
+    id="searchName" name="searchName" [(ngModel)]="searchName">
+    <div class="search-icon">
+      <img src="../assets/images/search-icon.svg" alt="search icon" />
+    </div>
+  </div>
+  <button class="button-styles search_button" (click)="search()">Search</button>
+  <div *ngIf="!loadingIndicator">
+    <div *ngFor='let user of usersList.items let i=index' >
+      <div class="userName" (click)="fetchUser(user.login,'user')" *ngIf='i<11'>
+        {{user.login}}
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center" *ngIf="loadingIndicator">
+    <div class="spinner-border" role="status">
+      <span class="sr-only loading"></span>
+    </div>
+  </div>
+</div>

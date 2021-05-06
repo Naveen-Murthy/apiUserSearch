@@ -1,0 +1,17 @@
+.user{
+    &_details{
+        font-size: 32px;
+    }
+    &_name{
+        text-transform: capitalize;
+    }
+    &_image{
+        margin-top: 20px;
+        width: 200px;
+        border-radius: 50%;
+        border: 3px solid #C1C1C1;
+    }
+    &_followers{
+        margin: 10px 0;
+    }
+}

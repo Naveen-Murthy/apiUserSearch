@@ -1,0 +1,64 @@
+.main_heading{
+    font-size: 32px;
+}
+@mixin layout($num){
+    @media (max-width: #{$num}px){
+        @content;
+    }
+}
+/* Search field Styles Start */
+.input {
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding: 12px 15px;
+    border: none;
+    width: 100%;
+}
+
+.input-with-icon {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    background-color: white;
+    border: 1px solid #C1C1C1;
+    border-radius: 6px;
+
+    input {
+        @include layout(426) {
+            padding: 9px 12px;
+        }
+    }
+}
+
+.search-icon {
+    cursor: pointer;
+    margin-right: 15px;
+    @include layout(426) {
+        margin-right: 10px;
+        img{
+            width: 20px;
+        }
+    }
+}
+
+.search_button{
+    margin-bottom: 20px;
+}
+
+
+.userName{
+    width: 270px;
+    margin-bottom: 10px;
+    color: black;
+    background-color: white;
+    border: 1px solid #C1C1C1;
+    border-radius: 6px;
+    padding: 10px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
